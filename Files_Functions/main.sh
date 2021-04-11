@@ -4,11 +4,11 @@ main_menu()
 {
   while :
   do
-    echo -e '\t 1) Display file details'
-    echo -e '\t 2) Delete a file'
-    echo -e '\t 3) Inode Details'
-    echo -e '\t 4) Exit '
-    echo -e -n '\t Enter you choice: '
+    echo -e '\t 1) DISPLAY FILE DETAILS'
+    echo -e '\t 2) DELETE A FILE'
+    echo -e '\t 3) INODE DETAILS'
+    echo -e '\t 4) EXIT '
+    echo -e -n '\t ENTER YOUR CHOICE: '
 
     read resp
     case "$resp" in
@@ -17,7 +17,7 @@ main_menu()
     2) file_delete;;
     3) inode_details;;
     4) exit 0;;
-    *) printf "\n***Re-enter a valid choice: ";;
+    *) printf "\n***RE-ENTER A VALID CHOICE: ";;
 
     esac
   done
@@ -27,7 +27,7 @@ file_details()
 {
   clear
   echo ""
-  read -p "Enter file/directory name: " filename
+  read -p "ENTER FILE/DIRECTORY NAME: " filename
    
   echo -e "\n\n------------------------------------------------------------------------------------------------------------"
   # Terse is an IBM archieve file format that supports lossless compression
@@ -73,7 +73,7 @@ file_details()
 
 file_delete()
 {
-  read -p "Enter File name: " file_name
+  read -p "ENTER FILE NAME: " file_name
   inode_num="$(stat $file_name | head -3 | tail -1 | awk '{print $4}')"
   # find / -type f -inum 8536263 -xdev > temp.txt
   # The above command stores all the files with matching inode number in the current file system in temp.txt
@@ -86,7 +86,7 @@ file_delete()
 inode_details()
 {
   clear
-  echo -e -n "\n\t\t***Inode details of all filesystems***\n"
+  echo -e -n "\n\t\t***INODE DETAILS OF ALL FILESYSTEMS***\n"
   echo -e "------------------------------------------------------------------\n"   
   echo "$(df -ih)"
   echo -e "\n-----------------------------------------------------------------\n"
