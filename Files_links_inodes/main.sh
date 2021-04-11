@@ -1,13 +1,16 @@
 #!/bin/bash
 
-rm file2.txt
-rm file4.txt
-rm list_files.txt
-#rm file1.txt
-rm direc1
-rm file6.txt
-rm file7.txt
-rm symlink
+
+#make sure to not comment it the second time u run
+#also have two text files[1&3] created with some content
+
+#rm file2.txt
+#rm file4.txt
+#rm list_files.txt                        
+#rm direc1				   
+#rm file6.txt
+#rm file7.txt
+#rm symlink
 
 main()
 {
